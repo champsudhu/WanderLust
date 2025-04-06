@@ -71,9 +71,10 @@ module.exports.searchListing = async (req, res) => {
         return res.redirect("/listings");
     };
     let searches = await Listing.find({country: { $regex: new RegExp(`^${searchDes}$`, "i")}});
+    let searches2 = await Listing.find({location: { $regex: new RegExp(`^${searchDes}$`, "i")}});
     let searches1 = await Listing.find({category: { $regex: new RegExp(`^${category}$`, "i")}});
     // console.log(searches);
-    return res.render("listings/search.ejs",{searches, searches1});
+    return res.render("listings/search.ejs",{searches, searches1, searches2});
 };
 
 module.exports.bookProperty = (req,res) =>{

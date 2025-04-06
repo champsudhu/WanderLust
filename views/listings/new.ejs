@@ -27,7 +27,7 @@
         <!-- <br> -->
         <div class="mb-3">
             <label for="image" class="form-label">Upload Image</label>
-            <input name="listing[image]" type="file" multiple="multiple" class="form-control" >
+            <input name="listing[image]" type="file" multiple="multiple" class="form-control" required>
         </div>
         <!-- <br> -->
         <div class="row">
@@ -48,8 +48,19 @@
         <!-- <br> -->
          <div class="row">
         <div class="mb-3 col-md-4">
-            <label for="category" class="form-label">Category</label>
-            <input name="listing[category]" placeholder="enter category" type="text" class="form-control" required>
+            <label for="category">Choose a category:</label>
+            <select class="form-select" name="listing[category]">
+                <option selected>None</option>
+                <option value="Trending">Trending</option>
+                <option value="Rooms">Rooms</option>
+                <option value="Iconic Cities">Iconic Cities</option>
+                <option value="Mountains">Mountains</option>
+                <option value="Castles">Castles</option>
+                <option value="Amazing Pools">Amazing Pools</option>
+                <option value="Camping">Camping</option>
+                <option value="Farms">Farms</option>
+                <option value="Arctic">Arctic</option>
+            </select>
             <div class="valid-feedback">Looks good!</div>
             <!-- <div class="invalid-feedback">Enter a price!</div> -->
         </div>

@@ -23,7 +23,6 @@ const User = require('./models/user.js');
 const listingRouter = require('./routes/listing.js');
 const reviewRouter = require('./routes/review.js');
 const userRouter = require('./routes/user.js');
-const { log } = require('console');
 
 app.engine('ejs', ejsMate);
 app.use(methodOverride('_method'));

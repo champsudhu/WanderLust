@@ -20,9 +20,6 @@ module.exports.newListing = (req,res)=>{
 };
 
 module.exports.createNewListing = async (req,res,next)=>{
-    // if(!req.body.listing){
-    //     throw new ExpressError(400,"Send a valid data!");
-    // };
         let url = req.file.path;
         let filename = req.file.filename;
         const newListing = new Listing(req.body.listing);
@@ -73,7 +70,6 @@ module.exports.searchListing = async (req, res) => {
     let searches = await Listing.find({country: { $regex: new RegExp(`^${searchDes}$`, "i")}});
     let searches2 = await Listing.find({location: { $regex: new RegExp(`^${searchDes}$`, "i")}});
     let searches1 = await Listing.find({category: { $regex: new RegExp(`^${category}$`, "i")}});
-    // console.log(searches);
     return res.render("listings/search.ejs",{searches, searches1, searches2});
 };
 
